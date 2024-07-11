@@ -16,7 +16,7 @@ This application demonstrates some react basics:
    echo v20.12.2 > .nvmrc
    nvm use
    ```
-1. Create a Vite project:
+1. Create a React project using [Vite](https://vitejs.dev/):
 
    ```
    npm create vite@latest web-app -- --template react-ts
