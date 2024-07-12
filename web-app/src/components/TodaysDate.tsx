@@ -18,5 +18,5 @@ export default function TodaysDate() {
 
   const today = dayNames[day] + ' ' + dd + '/' + mm + '/' + yyyy;
 
-  return <h2>{today}</h2>;
+  return <h2 className="text-xl font-bold mt-4 mb-8">{today}</h2>;
 }

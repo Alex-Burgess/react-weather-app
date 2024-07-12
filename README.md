@@ -5,6 +5,7 @@ This application demonstrates some react basics:
 - [Initialising the project](#initialising-the-project)
 - [Configuring ESlint and Prettier](#configuring-eslint-and-prettier)
 - [Creating a component](#creating-a-component)
+- [Styling components](#styling-components)
 
 ## Initialising the project
 
@@ -108,6 +109,36 @@ Components are one of the core concepts of React. They are JavaScript functions,
 
 The project has a component called `<TodaysDate>` which renders today's date.
 
-The component is created in it's own file [TodaysDate.tsx](/web-app/src/TodaysDate.tsx), so that it can be used in as many places as required.
+The component is created in it's own file [TodaysDate.tsx](/web-app/src/components/TodaysDate.tsx), so that it can be used in as many places as required.
 
 It is imported by the [App.tsx](/web-app/src/App.tsx) file, so that it is rendered on the main page.
+
+## Styling Components
+
+A component library, such as [Material UI](https://mui.com/) is often used to accelerate the development of a project.
+
+To install material:
+
+```
+npm install @mui/material @emotion/react @emotion/styled
+```
+
+The [SelectLocation.tsx](/web-app/src/components/SelectLocation.tsx) component is an example of using the Select MUI component.
+
+Components can be styled using CSS. [TailwindCSS](https://tailwindcss.com/) is a framework that greatly improves managing CSS in a project. [Install Tailwind CSS with Vite](https://tailwindcss.com/docs/guides/vite)
+
+1. Install Tailwind CSS:
+   ```
+   npm install -D tailwindcss postcss autoprefixer
+   npx tailwindcss init -p
+   ```
+1. Configure your template paths in `tailwind.config.js`:
+   ```
+   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+   ```
+1. Add the Tailwind directives to your `src/index.css`, and remove unused styles:
+   ```
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+   ```
