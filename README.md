@@ -4,6 +4,7 @@ This application demonstrates some react basics:
 
 - [Initialising the project](#initialising-the-project)
 - [Configuring ESlint and Prettier](#configuring-eslint-and-prettier)
+- [Creating a component](#creating-a-component)
 
 ## Initialising the project
 
@@ -100,3 +101,13 @@ This application demonstrates some react basics:
    ```
    npm run format
    ```
+
+## Creating a component
+
+Components are one of the core concepts of React. They are JavaScript functions, written in JSX, which contains the content that will be rendered by the browser.
+
+The project has a component called `<TodaysDate>` which renders today's date.
+
+The component is created in it's own file [TodaysDate.tsx](/web-app/src/TodaysDate.tsx), so that it can be used in as many places as required.
+
+It is imported by the [App.tsx](/web-app/src/App.tsx) file, so that it is rendered on the main page.
