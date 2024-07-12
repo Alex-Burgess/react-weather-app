@@ -7,6 +7,10 @@ This application demonstrates some react basics:
 - [Creating a component](#creating-a-component)
 - [Styling components](#styling-components)
 
+TODO:
+
+- [ ] Screenshots
+
 ## Initialising the project
 
 1. Create a new git repo and clone:
@@ -142,3 +146,19 @@ Components can be styled using CSS. [TailwindCSS](https://tailwindcss.com/) is a
    @tailwind components;
    @tailwind utilities;
    ```
+1. Start using Tailwind utility classes to style your content.
+
+## Making API Calls
+
+[SWR](https://swr.vercel.app/) is popular tool for making API calls.
+
+1. install:
+   ```
+   npm i swr
+   ```
+1. Create `.env` file with Weather API URL and Key. Note, this is NOT a sufficiently secure solution for deploying this application to production.
+   ```
+   VITE_WEATHER_KEY=111111111111111111111
+   VITE_WEATHER_URL='http://api.weatherapi.com/v1'
+   ```
+1. Review the [TodaysWeather.tsx](/web-app/src/components/TodaysWeather.tsx) component which uses SWR to make an API call.
