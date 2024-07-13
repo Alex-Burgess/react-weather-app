@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import Root from './routes/root';
+import Root from './routes/Root';
+import Tomorrow from './routes/Tomorrow';
 import ErrorPage from './ErrorPage';
 
 import './index.css';
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
     path: '/',
     element: <Root />,
     errorElement: <ErrorPage />,
+  },
+  {
+    path: 'tomorrow',
+    element: <Tomorrow />,
   },
 ]);
 
