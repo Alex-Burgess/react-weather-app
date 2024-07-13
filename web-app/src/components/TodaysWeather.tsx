@@ -1,5 +1,5 @@
 import useSWR from 'swr';
-import fetcher from './fetcher';
+import fetcher from '../lib/fetcher';
 import { Weather } from '../types';
 
 const key = import.meta.env.VITE_WEATHER_KEY;
