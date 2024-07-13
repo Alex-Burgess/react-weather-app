@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Root from './routes/Root';
 import Tomorrow from './routes/Tomorrow';
+import Navigation from './components/Navigation';
 import ErrorPage from './ErrorPage';
 
 import './index.css';
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <div className="h-dvh w-full">
+      <Navigation />
+      <div className="max-w-xl m-auto m-0 text-center mt-12">
+        <RouterProvider router={router} />
+      </div>
+    </div>
   </React.StrictMode>
 );

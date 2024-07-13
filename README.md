@@ -9,6 +9,9 @@ This application demonstrates some react basics:
 
 TODO:
 
+- [ ] Tidy up Navigation (no highlighting of which page is selected)
+- [ ] Context for drop down
+- [ ] Date and weather for tomorrow page
 - [ ] Screenshots
 
 ## Initialising the project

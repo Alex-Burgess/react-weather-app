@@ -13,7 +13,7 @@ export default function SelectLocation() {
   };
 
   return (
-    <Box sx={{ maxWidth: 320 }}>
+    <Box className="max-w-xs m-auto m-0 text-center">
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Location</InputLabel>
         <Select
