@@ -1,18 +1,15 @@
-import { useRouteError } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function ErrorPage() {
-  const error = useRouteError();
-  console.error(error);
-
   return (
     <div id="error-page">
       <h1 className="text-4xl font-bold">Oops!</h1>
-      <p>Sorry, an unexpected error has occurred.</p>
       <p>
-        <i>
-          {(error as Error)?.message ||
-            (error as { statusText?: string })?.statusText}
-        </i>
+        Go to the{' '}
+        <Link to="/" className="underline">
+          home
+        </Link>{' '}
+        page
       </p>
     </div>
   );

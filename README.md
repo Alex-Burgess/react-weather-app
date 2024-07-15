@@ -12,6 +12,7 @@ TODO:
 - [ ] Tidy up Navigation (no highlighting of which page is selected)
 - [ ] Context for drop down
 - [ ] Date and weather for tomorrow page
+- [ ] Update notes for state management, context and routing
 - [ ] Screenshots
 
 ## Initialising the project
