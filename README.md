@@ -1,6 +1,10 @@
 # react-weather-app
 
-This application demonstrates some react basics. It is meant to only be run locally and not deployed to infrastructure.
+This application demonstrates some react basics by retrieving the weather.
+
+![screentshot 1](/documentation/screenshot-1.png)
+
+Note: It is meant to only be run locally and not deployed to infrastructure.
 
 - [Initialising the project](#initialising-the-project)
 - [Configuring ESlint and Prettier](#configuring-eslint-and-prettier)
