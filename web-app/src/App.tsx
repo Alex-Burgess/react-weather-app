@@ -2,7 +2,7 @@ import { Routes, Route, Outlet } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Today from './routes/Today';
 import Tomorrow from './routes/Tomorrow';
-import ErrorPage from './ErrorPage';
+import ErrorPage from './routes/Error';
 
 export default function App() {
   return (

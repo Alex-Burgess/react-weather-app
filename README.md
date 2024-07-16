@@ -1,6 +1,6 @@
 # react-weather-app
 
-This application demonstrates some react basics:
+This application demonstrates some react basics. It is meant to only be run locally and not deployed to infrastructure.
 
 - [Initialising the project](#initialising-the-project)
 - [Configuring ESlint and Prettier](#configuring-eslint-and-prettier)
@@ -11,7 +11,6 @@ TODO:
 
 - [ ] Tidy up Navigation (no highlighting of which page is selected)
 - [ ] Context for drop down
-- [ ] Date and weather for tomorrow page
 - [ ] Update notes for state management, context and routing
 - [ ] Screenshots
 
@@ -160,9 +159,14 @@ Components can be styled using CSS. [TailwindCSS](https://tailwindcss.com/) is a
    ```
    npm i swr
    ```
-1. Create `.env` file with Weather API URL and Key. Note, this is NOT a sufficiently secure solution for deploying this application to production.
+1. Create `.env` file with Weather API URL and Key.
    ```
    VITE_WEATHER_KEY=111111111111111111111
    VITE_WEATHER_URL='http://api.weatherapi.com/v1'
    ```
 1. Review the [TodaysWeather.tsx](/web-app/src/components/TodaysWeather.tsx) component which uses SWR to make an API call.
+
+Notes:
+
+- The `.env` file is deliberately not checked in. This is NOT a sufficiently secure solution for deploying this application to production. You can also see the API key in the url parameters of the API request. A better implementation would be to move this API call to a back-end service to protect this.
+- The API request can respond with a CORS header. This article on [Overriding HTTP response headers](https://developer.chrome.com/docs/devtools/overrides) can help to overcome for this demo application purpose.
