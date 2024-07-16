@@ -8,11 +8,7 @@ This application demonstrates some react basics. It is meant to only be run loca
 - [Styling components](#styling-components)
 - [Adding browser routing and navigation](#adding-browser-routing-and-navigation)
 - [Managing state](#managing-state)
-- [Making API Calls](#making-api-calls)
-
-TODO:
-
-- [ ] Screenshots
+- [Making API Requests](#making-api-requests)
 
 ## Initialising the project
 
@@ -162,14 +158,23 @@ Components can be styled using CSS. [TailwindCSS](https://tailwindcss.com/) is a
 1. Add the Router with the `createBrowserRouter` function and `RouterProvider` component. An example of this is shown in the [main.tsx](/web-app/src/main.tsx). This must include a root layout component, for which the [App.tsx](/web-app/src/App.tsx) file was used.
 1. Add an Error page for any routes that don't exist. The [Error.tsx](/web-app/src/routes/Error.tsx) is an example of a page which is added to the `errorElement` attribute in the `createBrowserRouter` function.
 1. Create new routes by adding child component objects to the `createBrowserRouter` function. For these components to render inside the `<App>` (root) layout, `<Outlet>` needs to be added to the `<App>` component to define where we want the child routes to render.
-1. Add a navigation bar by adding the [Navigation.tsx](/web-app/src/components/Navigation.tsx) component to the root layout, so that this renders on all routes.
+1. Add a navigation bar by adding the [Navigation.tsx](/web-app/src/components/Navigation.tsx) component to the root layout, so that this renders on all routes. The `useLocation` hook is used to retrieve the current location object and perform a side effect (show which nav link is active) whenever the location changes.
 
 ## Managing state
 
-- [ ] useState hook
-- [ ] Context - drop down?
+[useState](https://react.dev/reference/react/useState) is a react hook that is used to manage the state of a component. This could be used to set the location when selected from the drop down, however when the user changes view (e.g. from today to tomorrow), the select component will show the default value.
 
-## Making API Calls
+Instead we can use [Context](https://react.dev/learn/passing-data-deeply-with-context) to provide the location information to the entire component tree so that they can switch view with their location being saved.
+
+Combining the context and useState also simplifies how to provide the location data to the [WeatherForecast.tsx](/web-app/src/components/WeatherForecast.tsx) component which uses it as part of its API request (see [Making API Request](#making-api-requests)).
+
+1. Create the `LocationContext`: See [locationContext.ts](/web-app/src/lib/locationContext.ts)
+1. Wrap the root of the application in the <LocationContext.Provider>: See [App.tsx](/web-app/src/App.tsx)
+1. Provide the `state` variable and `setState` function to the <LocationContext.Provider>.
+1. Use the `LocationContext` to retrieve the `location` variable for the API call. See [WeatherForecast.tsx](/web-app/src/components/WeatherForecast.tsx)
+1. Use the `LocationContext` to set the location when the `<Select>` copmonent is changed. See [SelectLocation.tsx](/web-app/src/components/SelectLocation.tsx)
+
+## Making API Requests
 
 [SWR](https://swr.vercel.app/) is popular tool for making API calls.
 

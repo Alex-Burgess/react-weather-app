@@ -1,15 +1,18 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
+import { LocationContext } from '../lib/locationContext';
+
 export default function SelectLocation() {
-  const [location, setLocation] = useState('');
+  const { location, setLocation } = useContext(LocationContext);
 
   const handleChange = (event: SelectChangeEvent) => {
     setLocation(event.target.value as string);
+    console.log(event);
   };
 
   return (

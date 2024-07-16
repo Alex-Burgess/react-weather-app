@@ -1,19 +1,20 @@
+import { useContext } from 'react';
 import useSWR from 'swr';
 import fetcher from '../lib/fetcher';
 import { Weather } from '../lib/types';
+
+import { LocationContext } from '../lib/locationContext';
 
 const key = import.meta.env.VITE_WEATHER_KEY;
 const baseUrl = import.meta.env.VITE_WEATHER_URL;
 
 interface WeatherForecastProps {
-  location: string;
   offsetDays: number;
 }
 
-const WeatherForecast: React.FC<WeatherForecastProps> = ({
-  location,
-  offsetDays,
-}) => {
+const WeatherForecast: React.FC<WeatherForecastProps> = ({ offsetDays }) => {
+  const { location } = useContext(LocationContext);
+
   const url = `${baseUrl}/forecast.json?key=${key}&aqi=no&q=${location}&alerts=no&days=${offsetDays + 1}`;
   const { data, error, isLoading } = useSWR<Weather>(url, fetcher);
 
