@@ -6,12 +6,12 @@ This application demonstrates some react basics. It is meant to only be run loca
 - [Configuring ESlint and Prettier](#configuring-eslint-and-prettier)
 - [Creating a component](#creating-a-component)
 - [Styling components](#styling-components)
+- [Adding browser routing and navigation](#adding-browser-routing-and-navigation)
+- [Managing state](#managing-state)
+- [Making API Calls](#making-api-calls)
 
 TODO:
 
-- [ ] Tidy up Navigation (no highlighting of which page is selected)
-- [ ] Context for drop down
-- [ ] Update notes for state management, context and routing
 - [ ] Screenshots
 
 ## Initialising the project
@@ -112,11 +112,11 @@ TODO:
 
 ## Creating a component
 
-Components are one of the core concepts of React. They are JavaScript functions, written in JSX, which contains the content that will be rendered by the browser.
+Components are one of the core concepts of React. They are JavaScript functions, written in JSX, which contain the content that will be rendered by the browser.
 
-The project has a component called `<TodaysDate>` which renders today's date.
+The project has a component called `<DayAndDate>` which renders today's date. A property (or prop) is provide to get the date of a number of days in the future.
 
-The component is created in it's own file [TodaysDate.tsx](/web-app/src/components/TodaysDate.tsx), so that it can be used in as many places as required.
+The component is created in it's own file [DayAndDate.tsx](/web-app/src/components/DayAndDate.tsx), so that it can be used in as many places as required.
 
 It is imported by the [App.tsx](/web-app/src/App.tsx) file, so that it is rendered on the main page.
 
@@ -150,6 +150,24 @@ Components can be styled using CSS. [TailwindCSS](https://tailwindcss.com/) is a
    @tailwind utilities;
    ```
 1. Start using Tailwind utility classes to style your content.
+
+## Adding browser routing and navigation
+
+[React router](https://reactrouter.com/en/main) is the most popular library for implementing routing.
+
+1. Install react router
+   ```
+   npm install react-router-dom
+   ```
+1. Add the Router with the `createBrowserRouter` function and `RouterProvider` component. An example of this is shown in the [main.tsx](/web-app/src/main.tsx). This must include a root layout component, for which the [App.tsx](/web-app/src/App.tsx) file was used.
+1. Add an Error page for any routes that don't exist. The [Error.tsx](/web-app/src/routes/Error.tsx) is an example of a page which is added to the `errorElement` attribute in the `createBrowserRouter` function.
+1. Create new routes by adding child component objects to the `createBrowserRouter` function. For these components to render inside the `<App>` (root) layout, `<Outlet>` needs to be added to the `<App>` component to define where we want the child routes to render.
+1. Add a navigation bar by adding the [Navigation.tsx](/web-app/src/components/Navigation.tsx) component to the root layout, so that this renders on all routes.
+
+## Managing state
+
+- [ ] useState hook
+- [ ] Context - drop down?
 
 ## Making API Calls
 
